@@ -4,8 +4,14 @@ FROM amazoncorretto:17
 WORKDIR /app
 # Skopiowanie wszystkich plików projektu do obrazu Dockera
 COPY . .
+
+RUN yum update -y && yum install -y findutils
+
 # Nadanie uprawnień do uruchomienia skryptu gradlew
 RUN chmod +x gradlew
+
+RUN sed -i 's/\r$//' gradlew
+
 # Budowanie aplikacji za pomocą Gradle
 RUN ./gradlew bootJar
 # Uruchomienie aplikacji Spring Boot

@@ -9,6 +9,18 @@ node_modules/
 .DS_Store
 *.log
 
+### Katalogi niechciane / Zastępcze ###
+.mvn/
+lib/
+coverage/
+
+### Zmienne środowiskowe ###
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 ### STS ###
 .apt_generated
 .classpath

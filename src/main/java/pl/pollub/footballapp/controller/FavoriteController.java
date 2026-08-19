@@ -16,6 +16,7 @@ import java.util.Map;
 @RequestMapping("/api/favorites")
 public class FavoriteController {
     private FavoriteService favoriteService;
+
     @Autowired
     public FavoriteController(FavoriteService favoriteService) {
         this.favoriteService = favoriteService;

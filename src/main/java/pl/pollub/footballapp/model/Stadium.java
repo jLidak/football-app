@@ -35,7 +35,7 @@ public class Stadium {
         return capacity;
     }
 
-//    public void setCapacity(int capacity) {
+    //    public void setCapacity(int capacity) {
 //        this.capacity = capacity;
 //    }
     public void setCapacity(int capacity) {
@@ -52,7 +52,6 @@ public class Stadium {
     public void setCity(City city) {
         this.city = city;
     }
-
 
 
 }

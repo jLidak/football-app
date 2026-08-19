@@ -24,14 +24,11 @@ public class EventController {
     }
 
 
-
-
-
     @PostMapping("/add")
     @PreAuthorize("hasRole('MODERATOR')")
     public ResponseEntity<Event> addEvent(@RequestBody EventRequest eventRequest) {
         System.out.println("Received EventRequest: " + eventRequest);
-        System.out.println("MatchID:"+eventRequest.getMatchId());
+        System.out.println("MatchID:" + eventRequest.getMatchId());
         return ResponseEntity.ok(eventService.addEvent(eventRequest));
     }
 

@@ -2,6 +2,7 @@ package pl.pollub.footballapp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -21,7 +22,8 @@ public class LeagueGroup {
     private List<TeamGroupMembership> teamGroupMemberships;
 
 
-    public LeagueGroup() {}
+    public LeagueGroup() {
+    }
 
     public LeagueGroup(String name) {
         this.name = name;
@@ -59,7 +61,10 @@ public class LeagueGroup {
     }
 
 
-    public List<TeamGroupMembership> getTeamGroupMemberships() { return teamGroupMemberships; }
+    public List<TeamGroupMembership> getTeamGroupMemberships() {
+        return teamGroupMemberships;
+    }
+
     public void setTeamGroupMemberships(List<TeamGroupMembership> teamGroupMemberships) {
         this.teamGroupMemberships = teamGroupMemberships;
     }

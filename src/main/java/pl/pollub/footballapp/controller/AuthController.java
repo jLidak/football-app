@@ -85,7 +85,7 @@ public class AuthController {
         }
     }
 
-//    @GetMapping("/users/email/{email}")
+    //    @GetMapping("/users/email/{email}")
 //    public ResponseEntity<?> getUserIdByEmail(@PathVariable String email) {
 //        return userService.getUserIdByEmail(email)
 //                .map(response -> ResponseEntity.ok(response))

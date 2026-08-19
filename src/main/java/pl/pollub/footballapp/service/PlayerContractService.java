@@ -23,6 +23,7 @@ public class PlayerContractService {
     private PlayerContractRepository playerContractRepository;
     private PlayerRepository playerRepository;
     private TeamRepository teamRepository;
+
     @Autowired
     public PlayerContractService(PlayerContractRepository playerContractRepository, PlayerRepository playerRepository, TeamRepository teamRepository) {
         this.playerContractRepository = playerContractRepository;
@@ -34,7 +35,6 @@ public class PlayerContractService {
     public List<PlayerContract> getAllTransfers() {
         return playerContractRepository.findAll(Sort.by(Sort.Direction.DESC, "startDate"));
     }
-
 
 
     public ResponseEntity<?> addPlayerContract(PlayerContractRequest request) {
@@ -147,7 +147,7 @@ public class PlayerContractService {
         playerContractRepository.deleteById(id);
     }
 
-//    public List<Player> getActivePlayersByTeam(Long teamId) {
+    //    public List<Player> getActivePlayersByTeam(Long teamId) {
 //        return playerContractRepository.findByTeamIdAndIsActiveTrue(teamId)
 //                .stream()
 //                .map(PlayerContract::getPlayer)

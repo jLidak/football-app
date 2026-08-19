@@ -1,8 +1,8 @@
 .App {
-    padding-top: calc(100px);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+  padding-top: calc(100px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -41,123 +41,123 @@
 }
 
 .form-container {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
 .form-container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: left;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
 }
 
 .form-container label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #444;
-    text-align: left;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+  text-align: left;
 }
 
 .form-container input,
 .form-container select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 .form-container input:focus,
 .form-container select:focus {
-    border-color: #61dafb;
-    outline: none;
+  border-color: #61dafb;
+  outline: none;
 }
 
 .form-container button {
-    padding: 12px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .form-container button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 /* Specific styles for the radio button groups */
 .radio-group {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .radio-group label {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .radio-group input {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
-.team-list, .league-list, .player-list {
-    list-style-type: none;
-    padding: 0;
+.team-list,
+.league-list,
+.player-list {
+  list-style-type: none;
+  padding: 0;
 }
 
 .list-item {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #f9f9f9;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
 }
 
 .list-item button {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }
 
 .logoutOrDeleteAccMessage {
-    text-align: center;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 999;
+  text-align: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 
-    /*margin-top: 20px;*/
-    /*width: fit-content;*/
-    /*left: 50%;*/
-    /*transform: translateX(-50%);*/
+  /*margin-top: 20px;*/
+  /*width: fit-content;*/
+  /*left: 50%;*/
+  /*transform: translateX(-50%);*/
 }
 
 .main-content {
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
-
-
 
 /*.modal-header{*/
 /*    justify-content: center;*/
@@ -189,17 +189,17 @@ img {
 /*}*/
 
 a {
-    color: inherit; /* Kolor dziedziczony od elementu nadrzędnego */
-    text-decoration: none; /* Usunięcie podkreślenia */
+  color: inherit; /* Kolor dziedziczony od elementu nadrzędnego */
+  text-decoration: none; /* Usunięcie podkreślenia */
 }
 
 a:hover {
-    color: #007bff; /* Możesz ustawić dowolny kolor dla hover */
-    text-decoration: underline; /* Opcjonalne podkreślenie przy najechaniu */
+  color: #007bff; /* Możesz ustawić dowolny kolor dla hover */
+  text-decoration: underline; /* Opcjonalne podkreślenie przy najechaniu */
 }
 
-Link{
-    color: inherit; /* Kolor dziedziczony od elementu nadrzędnego */
-    text-decoration: none; /* Usunięcie podkreślenia */
-    font-weight: normal;
+Link {
+  color: inherit; /* Kolor dziedziczony od elementu nadrzędnego */
+  text-decoration: none; /* Usunięcie podkreślenia */
+  font-weight: normal;
 }

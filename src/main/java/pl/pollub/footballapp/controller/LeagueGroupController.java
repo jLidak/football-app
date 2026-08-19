@@ -26,6 +26,7 @@ public class LeagueGroupController {
         LeagueGroup leagueGroup = leagueGroupService.saveLeagueGroup(name, leagueId);
         return ResponseEntity.ok(leagueGroup);
     }
+
     @GetMapping("/league/{leagueId}")
     public ResponseEntity<List<LeagueGroup>> getGroupsByLeague(@PathVariable Long leagueId) {
         List<LeagueGroup> groups = leagueGroupService.getGroupsByLeague(leagueId);

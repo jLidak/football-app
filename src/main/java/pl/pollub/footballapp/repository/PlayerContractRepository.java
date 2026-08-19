@@ -12,8 +12,11 @@ import java.util.List;
 @Repository
 public interface PlayerContractRepository extends JpaRepository<PlayerContract, Long> {
     List<PlayerContract> findByPlayerId(Long playerId);
+
     List<PlayerContract> findByTeamId(Long teamId);
+
     List<PlayerContract> findByIsActive(boolean isActive);
+
     boolean existsByPlayerIdAndIsActive(Long playerId, boolean isActive);
 
     List<PlayerContract> findByIsActiveAndEndDateBefore(boolean isActive, LocalDate date);

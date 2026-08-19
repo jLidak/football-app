@@ -16,11 +16,11 @@ import java.util.Optional;
 @Service
 public class MatchService {
     private final MatchRepository matchRepository;
+
     @Autowired
     public MatchService(MatchRepository matchRepository) {
         this.matchRepository = matchRepository;
     }
-
 
 
     public Match saveMatch(Match match) {
@@ -102,7 +102,7 @@ public class MatchService {
         return matchRepository.searchByTeamName(teamName);
     }
 
-//    public List<Match> searchMatchesByTeamName(String teamName) {
+    //    public List<Match> searchMatchesByTeamName(String teamName) {
 //        return matchRepository.findByTeamNameContaining(teamName);
 //    }
     public List<Match> getMatchesByDate(LocalDate date) {
@@ -111,6 +111,7 @@ public class MatchService {
         LocalDateTime endOfDay = date.atTime(LocalTime.MAX);
         return matchRepository.findAllByDateTimeBetween(startOfDay, endOfDay);
     }
+
     public List<Match> searchMatchesByTeamName(String teamName) {
         return matchRepository.findByTeamName(teamName);
     }

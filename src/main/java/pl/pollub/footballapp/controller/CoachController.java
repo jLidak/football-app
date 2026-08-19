@@ -17,6 +17,7 @@ import java.util.List;
 @RequestMapping("/api/coaches")
 public class CoachController {
     private CoachService coachService;
+
     @Autowired
     public CoachController(CoachService coachService) {
         this.coachService = coachService;
@@ -49,6 +50,7 @@ public class CoachController {
     public ResponseEntity<?> updateCoach(@PathVariable Long id, @RequestBody CoachRequest coachRequest) {
         return coachService.updateCoach(id, coachRequest);
     }
+
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('MODERATOR')")
     public ResponseEntity<?> deleteCoach(@PathVariable Long id) {

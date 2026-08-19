@@ -5,7 +5,8 @@ public class LeagueRequest {
     private String countryName;
     private String edition;
 
-    public LeagueRequest() {}
+    public LeagueRequest() {
+    }
 
     public LeagueRequest(String name, String countryName, String edition) {
         this.name = name;

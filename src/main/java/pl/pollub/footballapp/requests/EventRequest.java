@@ -1,6 +1,7 @@
 package pl.pollub.footballapp.requests;
 
 import pl.pollub.footballapp.EventType;
+
 import java.time.LocalDateTime;
 
 public class EventRequest {

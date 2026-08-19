@@ -74,7 +74,6 @@ public class PasswordResetTokenService {
     }
 
 
-
     public String createToken(User user) {
         String token = UUID.randomUUID().toString();
         PasswordResetToken passwordResetToken = new PasswordResetToken(token, user, LocalDateTime.now().plusHours(1));
@@ -83,6 +82,7 @@ public class PasswordResetTokenService {
         tokenRepository.save(passwordResetToken);
         return token;
     }
+
     public void handlePasswordReset(String email) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new IllegalArgumentException("Email not found"));

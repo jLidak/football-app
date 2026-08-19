@@ -17,15 +17,13 @@ public class FavoriteLeagueService {
     private FavoriteLeagueRepository favoriteLeagueRepository;
     private UserRepository userRepository;
     private LeagueRepository leagueRepository;
+
     @Autowired
     public FavoriteLeagueService(FavoriteLeagueRepository favoriteLeagueRepository, UserRepository userRepository, LeagueRepository leagueRepository) {
         this.favoriteLeagueRepository = favoriteLeagueRepository;
         this.userRepository = userRepository;
         this.leagueRepository = leagueRepository;
     }
-
-
-
 
 
     @Transactional

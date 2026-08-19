@@ -17,12 +17,11 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class StadiumController {
     private StadiumService stadiumService;
+
     @Autowired
     public StadiumController(StadiumService stadiumService) {
         this.stadiumService = stadiumService;
     }
-
-
 
 
     @PostMapping("/add")
@@ -64,6 +63,7 @@ public class StadiumController {
     public ResponseEntity<?> updateStadium(@PathVariable Long id, @RequestBody StadiumRequest updatedStadiumRequest) {
         return stadiumService.updateStadium(id, updatedStadiumRequest);
     }
+
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('MODERATOR')")
     public ResponseEntity<?> deleteStadium(@PathVariable Long id) {

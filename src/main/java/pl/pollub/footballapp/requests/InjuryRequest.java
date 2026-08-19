@@ -15,7 +15,9 @@ public class InjuryRequest {
         this.endDate = endDate;
         this.playerId = playerId;
     }
-    public InjuryRequest() {}
+
+    public InjuryRequest() {
+    }
 
 //    @JsonCreator
 //    public InjuryRequest(

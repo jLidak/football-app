@@ -8,8 +8,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
+
 @Component
-public class JsonCityImporter implements DataImporter{
+public class JsonCityImporter implements DataImporter {
 
     @Override
     public List<CityRequest> importData(InputStream inputStream) throws IOException {

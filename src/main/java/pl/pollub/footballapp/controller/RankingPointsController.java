@@ -22,9 +22,7 @@ public class RankingPointsController {
     }
 
 
-
-
-//    @GetMapping("/{rankingId}")
+    //    @GetMapping("/{rankingId}")
 //    public ResponseEntity<List<Map<String, Object>>> getRankingPointsByRankingId(@PathVariable Long rankingId) {
 //        List<RankingPoints> points = rankingPointsService.getRankingPointsByRankingId(rankingId);
 //
@@ -42,9 +40,6 @@ public class RankingPointsController {
         List<Map<String, Object>> response = rankingPointsService.getRankingPointsMappedByRankingId(rankingId);
         return ResponseEntity.ok(response);
     }
-
-
-
 
 
 //    @PutMapping("/update")

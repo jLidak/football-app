@@ -13,15 +13,13 @@ public class FavoriteMatchService {
     private FavoriteMatchRepository favoriteMatchRepository;
     private UserRepository userRepository;
     private MatchRepository matchRepository;
+
     @Autowired
     public FavoriteMatchService(FavoriteMatchRepository favoriteMatchRepository, UserRepository userRepository, MatchRepository matchRepository) {
         this.favoriteMatchRepository = favoriteMatchRepository;
         this.userRepository = userRepository;
         this.matchRepository = matchRepository;
     }
-
-
-
 
 
     @Transactional

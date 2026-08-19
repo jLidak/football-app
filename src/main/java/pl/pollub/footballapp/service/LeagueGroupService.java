@@ -29,6 +29,7 @@ public class LeagueGroupService {
 
         return leagueGroupRepository.save(leagueGroup);
     }
+
     public List<LeagueGroup> getAllGroups() {
         return leagueGroupRepository.findAll();
     }

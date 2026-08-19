@@ -48,6 +48,7 @@ public class ImporterFactory {
             throw new IllegalArgumentException("Unsupported file type: " + fileType);
         }
     }
+
     public DataImporter getImporterLeague(String fileType) {
         if ("json".equalsIgnoreCase(fileType)) {
             return jsonLeagueImporter;
@@ -57,6 +58,7 @@ public class ImporterFactory {
             throw new IllegalArgumentException("Unsupported file type: " + fileType);
         }
     }
+
     public DataImporter getImporterCoach(String fileType) {
         if ("json".equalsIgnoreCase(fileType)) {
             return jsonCoachImporter;
@@ -96,6 +98,7 @@ public class ImporterFactory {
             throw new IllegalArgumentException("Unsupported file type: " + fileType);
         }
     }
+
     public DataImporter getImporterPlayer(String fileType) {
         if (fileType.equalsIgnoreCase("csv")) {
             return new CsvPlayerImporter();

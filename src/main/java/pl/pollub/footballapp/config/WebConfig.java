@@ -32,6 +32,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/img/player/**")
                 .addResourceLocations("classpath:/static/img/player/");
     }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

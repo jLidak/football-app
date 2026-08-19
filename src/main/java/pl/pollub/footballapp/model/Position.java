@@ -16,7 +16,8 @@ public class Position {
 
     private String abbreviation;
 
-    public Position() {}
+    public Position() {
+    }
 
     public Position(String name, String abbreviation) {
         this.name = name;
@@ -24,7 +25,15 @@ public class Position {
     }
 
     // Gettery i settery
-    public Long getId() { return id; }
-    public String getName() { return name; }
-    public String getAbbreviation() { return abbreviation; }
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAbbreviation() {
+        return abbreviation;
+    }
 }

@@ -23,15 +23,13 @@ public class LeagueService {
     private LeagueRepository leagueRepository;
     private CountryRepository countryRepository;
     private ImporterFactory importerFactory;
+
     @Autowired
     public LeagueService(LeagueRepository leagueRepository, CountryRepository countryRepository, ImporterFactory importerFactory) {
         this.leagueRepository = leagueRepository;
         this.countryRepository = countryRepository;
         this.importerFactory = importerFactory;
     }
-
-
-
 
 
     public ResponseEntity<?> addLeague(LeagueRequest leagueRequest) {
@@ -55,7 +53,6 @@ public class LeagueService {
         leagueRepository.save(league);
         return ResponseEntity.ok("League added successfully");
     }
-
 
 
     public ResponseEntity<?> importLeagues(MultipartFile file, String fileType) throws IOException {
@@ -121,6 +118,7 @@ public class LeagueService {
         leagueRepository.save(league);
         return ResponseEntity.ok("League updated successfully");
     }
+
     public ResponseEntity<?> deleteLeague(Long id) {
         if (leagueRepository.existsById(id)) {
             leagueRepository.deleteById(id);

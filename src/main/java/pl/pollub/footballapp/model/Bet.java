@@ -1,6 +1,7 @@
 package pl.pollub.footballapp.model;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -22,8 +23,8 @@ public class Bet {
     private boolean isCorrect;
 
 
-
-    public Bet() {}
+    public Bet() {
+    }
 
     public Bet(User user, Match match, int homeScore, int awayScore, Boolean isCorrect) {
         this.user = user;
@@ -32,7 +33,6 @@ public class Bet {
         this.awayScore = awayScore;
         this.isCorrect = isCorrect;
     }
-
 
 
     // Gettery i settery

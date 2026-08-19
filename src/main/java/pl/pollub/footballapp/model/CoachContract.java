@@ -1,6 +1,7 @@
 package pl.pollub.footballapp.model;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 
@@ -101,7 +102,6 @@ public class CoachContract {
     public void setTransferFee(double transferFee) {
         this.transferFee = transferFee;
     }
-
 
 
 }

@@ -1,4 +1,5 @@
 package pl.pollub.footballapp;
+
 public enum EventType {
     MATCH_START,
     MATCH_END,

@@ -23,15 +23,13 @@ public class MatchSquadService {
     private final MatchRepository matchRepository;
     private final PlayerRepository playerRepository;
     private static final Logger logger = LoggerFactory.getLogger(MatchSquadService.class);
+
     @Autowired
     public MatchSquadService(MatchSquadRepository matchSquadRepository, MatchRepository matchRepository, PlayerRepository playerRepository) {
         this.matchSquadRepository = matchSquadRepository;
         this.matchRepository = matchRepository;
         this.playerRepository = playerRepository;
     }
-
-
-
 
 
     @Transactional
@@ -50,6 +48,7 @@ public class MatchSquadService {
 
         return matchSquadRepository.save(matchSquad);
     }
+
     public MatchSquad addMatchSquad(MatchSquad matchSquad) {
         return matchSquadRepository.save(matchSquad);
     }

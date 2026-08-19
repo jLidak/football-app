@@ -153,7 +153,7 @@ public class Match {
         return round;
     }
 
-    public void setRound(String  round) {
+    public void setRound(String round) {
         this.round = round;
     }
 

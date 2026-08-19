@@ -1,6 +1,7 @@
 package pl.pollub.footballapp.requests;
 
 import java.time.LocalDate;
+
 import pl.pollub.footballapp.TransferType;
 
 public class PlayerContractRequest {
@@ -11,7 +12,6 @@ public class PlayerContractRequest {
     private Double salary;
     private Double transferFee;
     private TransferType transferType;
-
 
 
     public LocalDate getStartDate() {

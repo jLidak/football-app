@@ -20,11 +20,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
     private JwtRequestFilter jwtRequestFilter;
+
     @Autowired
     public SecurityConfig(JwtRequestFilter jwtRequestFilter) {
         this.jwtRequestFilter = jwtRequestFilter;
     }
-
 
 
     @Bean
@@ -34,41 +34,41 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests
 
-                        .requestMatchers("/api/**").permitAll() // Pozwól na dostęp bez autoryzacji
+                                .requestMatchers("/api/**").permitAll() // Pozwól na dostęp bez autoryzacji
 
 
-                        .requestMatchers("/api/auth/login", "/api/auth/register").permitAll()
-                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/countries").permitAll()
-                        .requestMatchers("/api/auth/reset-password").permitAll()
-                        .requestMatchers("/api/auth/reset-password-confirm").permitAll()
-                        .requestMatchers("/api/auth/register-admin").permitAll()
-                        .requestMatchers("/api/auth/check-admin").permitAll()
-                        .requestMatchers("/api/coaches/search/**").hasRole("MODERATOR")
-                        .requestMatchers("/api/coach-contracts/**").hasRole("MODERATOR")
-                        .requestMatchers("/api/positions/**").permitAll()
-                        .requestMatchers("/assets/img/player/**").permitAll()
-                        .requestMatchers("/img/player/**").permitAll()
-                        .requestMatchers("/img/team/**").permitAll()
-                        // Allow all authenticated users (ROLE_USER) to access teams, leagues, and matches
-                        .requestMatchers("/api/teams/**", "/api/leagues/**", "/api/matches/**",
-                                "/api/favorite-teams/**", "/api/favorite-leagues/**", "/api/favorite-matches/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
-                        .requestMatchers("/api/favorites/**").permitAll()
+                                .requestMatchers("/api/auth/login", "/api/auth/register").permitAll()
+                                .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                                .requestMatchers("/api/countries").permitAll()
+                                .requestMatchers("/api/auth/reset-password").permitAll()
+                                .requestMatchers("/api/auth/reset-password-confirm").permitAll()
+                                .requestMatchers("/api/auth/register-admin").permitAll()
+                                .requestMatchers("/api/auth/check-admin").permitAll()
+                                .requestMatchers("/api/coaches/search/**").hasRole("MODERATOR")
+                                .requestMatchers("/api/coach-contracts/**").hasRole("MODERATOR")
+                                .requestMatchers("/api/positions/**").permitAll()
+                                .requestMatchers("/assets/img/player/**").permitAll()
+                                .requestMatchers("/img/player/**").permitAll()
+                                .requestMatchers("/img/team/**").permitAll()
+                                // Allow all authenticated users (ROLE_USER) to access teams, leagues, and matches
+                                .requestMatchers("/api/teams/**", "/api/leagues/**", "/api/matches/**",
+                                        "/api/favorite-teams/**", "/api/favorite-leagues/**", "/api/favorite-matches/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
+                                .requestMatchers("/api/favorites/**").permitAll()
 
-                        .requestMatchers("/api/match-squad/**").permitAll()
-                        .requestMatchers("/api/match-squad/players/**").permitAll()
-                        .requestMatchers("/api/matches/**").permitAll() // Pozwól na dostęp bez autoryzacji
-                        .requestMatchers("/api/match-squad/first-squad/**").permitAll() // Pozwól na dostęp bez autoryzacji
-                        .requestMatchers("/api/match-squad/substitutes/**").permitAll() // Pozwól na dostęp bez autoryzacji
-                        .requestMatchers("/api/leagues/countries").permitAll() // Pozwól na dostęp bez autoryzacji
-                        .requestMatchers("/api/leagues/**").permitAll() // Pozwól na dostęp bez autoryzacji
-                        .requestMatchers("/api/leagues/byCountry").permitAll() // Pozwól na dostęp bez autoryzacji
+                                .requestMatchers("/api/match-squad/**").permitAll()
+                                .requestMatchers("/api/match-squad/players/**").permitAll()
+                                .requestMatchers("/api/matches/**").permitAll() // Pozwól na dostęp bez autoryzacji
+                                .requestMatchers("/api/match-squad/first-squad/**").permitAll() // Pozwól na dostęp bez autoryzacji
+                                .requestMatchers("/api/match-squad/substitutes/**").permitAll() // Pozwól na dostęp bez autoryzacji
+                                .requestMatchers("/api/leagues/countries").permitAll() // Pozwól na dostęp bez autoryzacji
+                                .requestMatchers("/api/leagues/**").permitAll() // Pozwól na dostęp bez autoryzacji
+                                .requestMatchers("/api/leagues/byCountry").permitAll() // Pozwól na dostęp bez autoryzacji
 //                        .requestMatchers("/api/**").permitAll() // Pozwól na dostęp bez autoryzacji
 
 
-                        .requestMatchers("/images/**").permitAll()
-                        .requestMatchers("/css/**", "/js/**", "/webjars/**").permitAll()
-                        .anyRequest().authenticated()
+                                .requestMatchers("/images/**").permitAll()
+                                .requestMatchers("/css/**", "/js/**", "/webjars/**").permitAll()
+                                .anyRequest().authenticated()
                 )
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()

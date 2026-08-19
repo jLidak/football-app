@@ -1,6 +1,7 @@
 package pl.pollub.footballapp.exception;
 
 import pl.pollub.footballapp.requests.StadiumRequest;
+
 import java.util.List;
 
 public class DuplicateStadiumsException extends RuntimeException {

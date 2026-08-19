@@ -33,9 +33,6 @@ public class EventService {
     }
 
 
-
-
-
     public Event addEvent(EventRequest eventRequest) {
         Event event = new Event();
 
@@ -190,10 +187,6 @@ public class EventService {
     }
 
 
-
-
-
-
     public void calculateMinutesPlayed(Long matchId) {
         Match match = matchRepository.findById(matchId)
                 .orElseThrow(() -> new IllegalArgumentException("Match not found for ID: " + matchId));
@@ -293,8 +286,6 @@ public class EventService {
                 return 0;
         }
     }
-
-
 
 
     // Metoda obliczająca całkowity czas meczu

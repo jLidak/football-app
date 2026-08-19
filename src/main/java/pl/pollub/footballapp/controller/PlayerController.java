@@ -21,6 +21,7 @@ import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,8 +40,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
 @RestController
 @RequestMapping("/api/players")
 public class PlayerController {
@@ -54,8 +57,7 @@ public class PlayerController {
     }
 
 
-
-//    @PostMapping("/add")
+    //    @PostMapping("/add")
 //    @PreAuthorize("hasRole('MODERATOR')")
 //    public ResponseEntity<?> addPlayer(
 //            @RequestParam("firstName") String firstName,
@@ -100,7 +102,7 @@ public class PlayerController {
     }
 
 
-//    @PutMapping("/{id}")
+    //    @PutMapping("/{id}")
 //    @PreAuthorize("hasRole('MODERATOR')")
 //    public ResponseEntity<?> updatePlayer(
 //            @PathVariable Long id,
@@ -153,7 +155,7 @@ public class PlayerController {
         return ResponseEntity.ok(players);
     }
 
-//    @PostMapping("/import")
+    //    @PostMapping("/import")
 //    @PreAuthorize("hasRole('MODERATOR')")
 //    public ResponseEntity<?> importPlayers(@RequestParam("file") MultipartFile file, @RequestParam("type") String fileType) {
 //        try {
@@ -173,7 +175,7 @@ public class PlayerController {
         return ResponseEntity.ok(message);
     }
 
-//    @PostMapping("/{id}/uploadPhoto")
+    //    @PostMapping("/{id}/uploadPhoto")
 //    @PreAuthorize("hasRole('MODERATOR')")
 //    public ResponseEntity<?> uploadPlayerPhoto(@PathVariable Long id, @RequestParam("photo") MultipartFile photo) {
 //        try {
@@ -218,6 +220,7 @@ public class PlayerController {
     public ResponseEntity<List<Player>> getPlayersByTeam(@PathVariable Long teamId) {
         return ResponseEntity.ok(playerService.getPlayersByTeam(teamId));
     }
+
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('MODERATOR')")
     public ResponseEntity<?> deletePlayer(@PathVariable Long id) {

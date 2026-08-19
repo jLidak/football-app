@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("/api/cities")
 public class CityController {
     private CityService cityService;
+
     @Autowired
     public CityController(CityService cityService) {
         this.cityService = cityService;

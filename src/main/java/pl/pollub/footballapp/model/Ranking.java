@@ -1,6 +1,7 @@
 package pl.pollub.footballapp.model;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -35,7 +36,6 @@ public class Ranking {
     public boolean getIsActive() {
         return isActive;
     }
-
 
 
     // Gettery i settery

@@ -20,14 +20,13 @@ public class CityService {
     private CityRepository cityRepository;
     private CountryRepository countryRepository;
     private ImporterFactory importerFactory;
+
     @Autowired
     public CityService(CityRepository cityRepository, CountryRepository countryRepository, ImporterFactory importerFactory) {
         this.cityRepository = cityRepository;
         this.countryRepository = countryRepository;
         this.importerFactory = importerFactory;
     }
-
-
 
 
     public ResponseEntity<?> addCity(City cityRequest) {

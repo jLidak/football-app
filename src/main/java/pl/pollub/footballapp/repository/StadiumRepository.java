@@ -12,6 +12,7 @@ import java.util.Optional;
 
 public interface StadiumRepository extends JpaRepository<Stadium, Long> {
     Optional<Stadium> findByNameAndCity_Id(String name, Long cityId);
+
     boolean existsByNameAndCity(String name, City city);
 
     @Query("SELECT s FROM Stadium s WHERE LOWER(s.name) LIKE %:query% OR LOWER(s.city.name) LIKE %:query%")

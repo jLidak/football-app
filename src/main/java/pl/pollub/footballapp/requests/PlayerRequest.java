@@ -39,7 +39,8 @@ public class PlayerRequest {
 
     // Constructors, getters, and setters
 
-    public PlayerRequest() {}
+    public PlayerRequest() {
+    }
 
     public PlayerRequest(Long id, String firstName, String lastName, LocalDate dateOfBirth, String nickname,
                          String picture, Long positionId, Long countryId) {
@@ -64,6 +65,7 @@ public class PlayerRequest {
         this.countryId = countryId;
         this.value = value;
     }
+
     public PlayerRequest(String firstName, String lastName, LocalDate dateOfBirth, String nickname, String picture,
                          Long positionId, Long countryId, BigDecimal value) {
         this.firstName = firstName;
@@ -79,29 +81,69 @@ public class PlayerRequest {
     }
 
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public LocalDate getDateOfBirth() { return dateOfBirth; }
-    public void setDateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-    public String getNickname() { return nickname; }
-    public void setNickname(String nickname) { this.nickname = nickname; }
+    public String getLastName() {
+        return lastName;
+    }
 
-    public String getPicture() { return picture; }
-    public void setPicture(String picture) { this.picture = picture; }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-    public Long getPositionId() { return positionId; }
-    public void setPositionId(Long positionId) { this.positionId = positionId; }
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
 
-    public Long getCountryId() { return countryId; }
-    public void setCountryId(Long countryId) { this.countryId = countryId; }
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+    public Long getPositionId() {
+        return positionId;
+    }
+
+    public void setPositionId(Long positionId) {
+        this.positionId = positionId;
+    }
+
+    public Long getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(Long countryId) {
+        this.countryId = countryId;
+    }
 
 //    public Long getClubId() { return clubId; }
 //    public void setClubId(Long clubId) { this.clubId = clubId; }

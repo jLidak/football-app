@@ -35,7 +35,7 @@ public class StadiumRequest {
         return capacity;
     }
 
-//    public void setCapacity(int capacity) {
+    //    public void setCapacity(int capacity) {
 //        this.capacity = capacity;
 //    }
     public void setCapacity(int capacity) {

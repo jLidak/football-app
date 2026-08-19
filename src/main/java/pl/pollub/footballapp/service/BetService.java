@@ -21,6 +21,7 @@ public class BetService {
     private RankingRepository rankingRepository;
     private RankingPointsService rankingPointsService;
     private NotificationService notificationService;
+
     @Autowired
     public BetService(BetRepository betRepository, UserRepository userRepository, MatchRepository matchRepository, RankingRepository rankingRepository, RankingPointsService rankingPointsService, RankingPointsRepository rankingPointsRepository, NotificationService notificationService) {
         this.betRepository = betRepository;
@@ -31,8 +32,6 @@ public class BetService {
         this.rankingPointsRepository = rankingPointsRepository;
         this.notificationService = notificationService;
     }
-
-
 
 
 //    public Bet addBet(Bet bet) {
@@ -154,10 +153,7 @@ public class BetService {
     }
 
 
-
-
-
-//    @PostMapping("/add")
+    //    @PostMapping("/add")
 //    public ResponseEntity<?> addBet(@RequestBody BetRequest request) {
 //        Long userId = payload.get("userId");
 //        Long matchId = payload.get("matchId");
@@ -193,9 +189,6 @@ public class BetService {
     }
 
 
-
-
-
     public void checkBetsForMatch(Long matchId, int actualHomeScore, int actualAwayScore) {
         List<Bet> bets = betRepository.findByMatchId(matchId);
         for (Bet bet : bets) {
@@ -204,10 +197,10 @@ public class BetService {
             betRepository.save(bet);
         }
     }
+
     public int getUserPoints(Long userId) {
         return betRepository.countByUserIdAndIsCorrectTrue(userId);
     }
-
 
 
     //  WSTAWIC DO MECZU, JESLI SIE SKONCZY

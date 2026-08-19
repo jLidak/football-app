@@ -26,17 +26,19 @@ import java.util.stream.Collectors;
 public class TeamController {
     private TeamService teamService;
     private static final Logger logger = LoggerFactory.getLogger(TeamController.class);
+
     @Autowired
     public TeamController(TeamService teamService) {
         this.teamService = teamService;
     }
+
     @PostMapping("/add")
     @PreAuthorize("hasRole('MODERATOR')")
     public ResponseEntity<?> addTeam(
-        @RequestParam("name") String name,
-        @RequestParam("isClub") boolean isClub,
-        @RequestParam("leagueId") Long leagueId,
-        @RequestParam(value = "picture", required = false) MultipartFile picture) {
+            @RequestParam("name") String name,
+            @RequestParam("isClub") boolean isClub,
+            @RequestParam("leagueId") Long leagueId,
+            @RequestParam(value = "picture", required = false) MultipartFile picture) {
 
         TeamRequest teamRequest = new TeamRequest(name, isClub, leagueId);
 
@@ -119,6 +121,7 @@ public class TeamController {
         List<Map<String, Object>> statistics = teamService.calculateGroupStatistics(groupId);
         return ResponseEntity.ok(statistics);
     }
+
     @GetMapping("/group/{groupId}/points")
     @PermitAll
     public ResponseEntity<List<Map<String, Object>>> getGroupPoints(@PathVariable Long groupId) {

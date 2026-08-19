@@ -23,15 +23,13 @@ public class InjuryService {
     private InjuryRepository injuryRepository;
     private PlayerRepository playerRepository;
     private ImporterFactory importerFactory;
+
     @Autowired
     public InjuryService(InjuryRepository injuryRepository, PlayerRepository playerRepository, ImporterFactory importerFactory) {
         this.injuryRepository = injuryRepository;
         this.playerRepository = playerRepository;
         this.importerFactory = importerFactory;
     }
-
-
-
 
 
     public ResponseEntity<?> addInjury(InjuryRequest injuryRequest) {
@@ -98,6 +96,7 @@ public class InjuryService {
 
         return ResponseEntity.ok(message);
     }
+
     public List<Injury> getInjuriesByPlayerId(Long playerId) {
         return injuryRepository.findByPlayerId(playerId);
     }

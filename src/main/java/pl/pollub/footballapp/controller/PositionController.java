@@ -13,11 +13,11 @@ import java.util.Optional;
 @RequestMapping("/api/positions")
 public class PositionController {
     private PositionRepository positionRepository;
+
     @Autowired
     public PositionController(PositionRepository positionRepository) {
         this.positionRepository = positionRepository;
     }
-
 
 
     // Endpoint do pobrania wszystkich pozycji

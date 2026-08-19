@@ -44,7 +44,6 @@ public class MatchController {
     private TeamRepository teamRepository;
 
 
-
     @PostMapping("/add")
     @PreAuthorize("hasRole('MODERATOR')")
     public ResponseEntity<Long> addMatch(@RequestBody Match match) {
@@ -66,26 +65,26 @@ public class MatchController {
                 .orElseThrow(() -> new RuntimeException("Away team not found")));
 
 
-        if(!match.getBetable()){
+        if (!match.getBetable()) {
             System.out.println("BETABLE IS FALSE");
-        }else if (match.getBetable()){
+        } else if (match.getBetable()) {
             System.out.println("BETABLE IS TRUE");
-        }else if (match.getBetable() == null){
+        } else if (match.getBetable() == null) {
             System.out.println("BETABLE IS NULL");
-        }else{
+        } else {
             System.out.println("BETABLE IS SOMETHING ELSE");
         }
 
         if (match.getBetable() == null) {
             match.setBetable(false);
         }
-        if(!match.getBetable()){
+        if (!match.getBetable()) {
             System.out.println("BETABLE IS FALSE");
-        }else if (match.getBetable()){
+        } else if (match.getBetable()) {
             System.out.println("BETABLE IS TRUE");
-        }else if (match.getBetable() == null){
+        } else if (match.getBetable() == null) {
             System.out.println("BETABLE IS NULL");
-        }else{
+        } else {
             System.out.println("BETABLE IS SOMETHING ELSE");
         }
 
@@ -120,7 +119,6 @@ public class MatchController {
         matchService.deleteMatch(id);
         return ResponseEntity.ok().build();
     }
-
 
 
     @PutMapping("/{id}")

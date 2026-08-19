@@ -17,11 +17,11 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class RefereeController {
     private RefereeService refereeService;
+
     @Autowired
     public RefereeController(RefereeService refereeService) {
         this.refereeService = refereeService;
     }
-
 
 
     @PostMapping("/add")

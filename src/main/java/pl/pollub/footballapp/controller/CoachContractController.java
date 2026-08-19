@@ -15,6 +15,7 @@ import java.util.List;
 @RequestMapping("/api/coach-contracts")
 public class CoachContractController {
     private CoachContractService coachContractService;
+
     @Autowired
     public CoachContractController(CoachContractService coachContractService) {
         this.coachContractService = coachContractService;

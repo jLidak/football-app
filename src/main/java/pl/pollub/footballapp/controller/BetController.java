@@ -23,6 +23,7 @@ public class BetController {
 
     private BetService betService;
     private BetRepository betRepository;
+
     @Autowired
     public BetController(BetService betService, BetRepository betRepository) {
         this.betService = betService;
@@ -61,8 +62,7 @@ public class BetController {
     }
 
 
-
-//////////////////////
+    /// ///////////////////
     @PostMapping("/verify/{matchId}")
     public ResponseEntity<?> verifyBetsForMatch(@PathVariable Long matchId, @RequestParam int actualHomeScore, @RequestParam int actualAwayScore) {
         betService.checkBetsForMatch(matchId, actualHomeScore, actualAwayScore);

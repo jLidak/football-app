@@ -36,8 +36,6 @@ public class TeamService {
     }
 
 
-
-
     @Autowired
     private MatchRepository matchRepository;
 
@@ -165,7 +163,7 @@ public class TeamService {
 
         // Update picture if new one is provided
         if (picture != null) {
-            String photoPath = fileStorageService.saveImage(picture, "team_" + id,"team");
+            String photoPath = fileStorageService.saveImage(picture, "team_" + id, "team");
             team.setPicture(photoPath);
         }
 
@@ -305,7 +303,6 @@ public class TeamService {
     public List<Team> searchTeamsByName(String name) {
         return teamRepository.findByNameContainingIgnoreCase(name);
     }
-
 
 
     public Optional<Team> getTeamById(Long id) {

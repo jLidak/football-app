@@ -21,6 +21,7 @@ public class RankingPointsService {
     private RankingRepository rankingRepository;
     private UserRepository userRepository;
     private NotificationService notificationService;
+
     @Autowired
     public RankingPointsService(RankingPointsRepository rankingPointsRepository, RankingRepository rankingRepository, UserRepository userRepository, NotificationService notificationService) {
         this.rankingPointsRepository = rankingPointsRepository;
@@ -28,9 +29,6 @@ public class RankingPointsService {
         this.userRepository = userRepository;
         this.notificationService = notificationService;
     }
-
-
-
 
 
     public List<RankingPoints> getRankingPointsByRankingId(Long rankingId) {
@@ -55,17 +53,17 @@ public class RankingPointsService {
                 .orElseThrow(() -> new IllegalStateException("No active ranking found"));
 
         RankingPoints rankingPoints = rankingPointsRepository.findByUserIdAndRankingId(userId, activeRanking.getId())
-        .orElseGet(() -> {
-            User user = userRepository.findById(userId)
-                    .orElseThrow(() -> new IllegalArgumentException("User not found"));
-            RankingPoints newPoints = new RankingPoints();
+                .orElseGet(() -> {
+                    User user = userRepository.findById(userId)
+                            .orElseThrow(() -> new IllegalArgumentException("User not found"));
+                    RankingPoints newPoints = new RankingPoints();
 //            newPoints.setUser(new User()); // Jeśli User jest relacją ManyToOne, trzeba wczytać obiekt User
-            newPoints.setUser(user);
-            newPoints.setRanking(activeRanking);
-            newPoints.setPoints(0);
-            newPoints.setLastUpdated(LocalDateTime.now());
-            return newPoints;
-        });
+                    newPoints.setUser(user);
+                    newPoints.setRanking(activeRanking);
+                    newPoints.setPoints(0);
+                    newPoints.setLastUpdated(LocalDateTime.now());
+                    return newPoints;
+                });
 
         // Aktualizuj punkty
         rankingPoints.setPoints(rankingPoints.getPoints() + pointsToAdd);

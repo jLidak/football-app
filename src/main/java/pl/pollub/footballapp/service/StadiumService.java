@@ -25,6 +25,7 @@ public class StadiumService {
     private CityRepository cityRepository;
     private CountryRepository countryRepository;
     private ImporterFactory importerFactory;
+
     @Autowired
     public StadiumService(StadiumRepository stadiumRepository, CityRepository cityRepository, CountryRepository countryRepository, ImporterFactory importerFactory) {
         this.stadiumRepository = stadiumRepository;
@@ -32,9 +33,6 @@ public class StadiumService {
         this.countryRepository = countryRepository;
         this.importerFactory = importerFactory;
     }
-
-
-
 
 
     public ResponseEntity<?> addStadium(StadiumRequest stadiumRequest) {
@@ -127,6 +125,7 @@ public class StadiumService {
         stadiumRepository.save(stadium);
         return ResponseEntity.ok("Stadium updated successfully");
     }
+
     public ResponseEntity<?> deleteStadium(Long id) {
         if (stadiumRepository.existsById(id)) {
             stadiumRepository.deleteById(id);

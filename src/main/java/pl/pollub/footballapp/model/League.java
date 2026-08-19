@@ -42,7 +42,8 @@ public class League {
     private Country country;
 
     // Constructors, Getters, and Setters
-    public League() {}
+    public League() {
+    }
 
     public League(String name, String edition, Country country) {
         this.name = name;

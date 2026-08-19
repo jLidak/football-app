@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("/api/injuries")
 public class InjuryController {
     private InjuryService injuryService;
+
     @Autowired
     public InjuryController(InjuryService injuryService) {
         this.injuryService = injuryService;

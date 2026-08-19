@@ -109,8 +109,6 @@
 //
 //export default EditRankingForm;
 
-
-
 //import React, { useState, useEffect } from 'react';
 //import axios from 'axios';
 //
@@ -251,147 +249,147 @@
 //
 //export default EditRankingForm;
 
-
-
-
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Form, Button, Container } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Form, Button, Container } from "react-bootstrap";
 
 const EditRankingForm = ({ onClose }) => {
-    const [rankings, setRankings] = useState([]);
-    const [selectedRankingId, setSelectedRankingId] = useState('');
-    const [name, setName] = useState('');
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
-    const [message, setMessage] = useState('');
+  const [rankings, setRankings] = useState([]);
+  const [selectedRankingId, setSelectedRankingId] = useState("");
+  const [name, setName] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [message, setMessage] = useState("");
 
-    useEffect(() => {
-        const token = localStorage.getItem('jwtToken');
+  useEffect(() => {
+    const token = localStorage.getItem("jwtToken");
 
-        // Pobranie listy rankingów
-        axios
-            .get('http://localhost:8080/api/rankings', {
-                headers: { Authorization: `Bearer ${token}` },
-            })
-            .then((response) => setRankings(response.data))
-            .catch((error) => console.error('Error fetching rankings:', error));
-    }, []);
+    // Pobranie listy rankingów
+    axios
+      .get("http://localhost:8080/api/rankings", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => setRankings(response.data))
+      .catch((error) => console.error("Error fetching rankings:", error));
+  }, []);
 
-    const handleRankingChange = (e) => {
-        const rankingId = e.target.value;
-        setSelectedRankingId(rankingId);
+  const handleRankingChange = (e) => {
+    const rankingId = e.target.value;
+    setSelectedRankingId(rankingId);
 
-        if (rankingId) {
-            const token = localStorage.getItem('jwtToken');
+    if (rankingId) {
+      const token = localStorage.getItem("jwtToken");
 
-            // Pobranie szczegółów wybranego rankingu
-            axios
-                .get(`http://localhost:8080/api/rankings/${rankingId}`, {
-                    headers: { Authorization: `Bearer ${token}` },
-                })
-                .then((response) => {
-                    const ranking = response.data;
-                    setName(ranking.name);
-                    setStartDate(ranking.startDate);
-                    setEndDate(ranking.endDate);
-                })
-                .catch((error) => console.error('Error fetching ranking details:', error));
-        } else {
-            setName('');
-            setStartDate('');
-            setEndDate('');
-        }
+      // Pobranie szczegółów wybranego rankingu
+      axios
+        .get(`http://localhost:8080/api/rankings/${rankingId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((response) => {
+          const ranking = response.data;
+          setName(ranking.name);
+          setStartDate(ranking.startDate);
+          setEndDate(ranking.endDate);
+        })
+        .catch((error) =>
+          console.error("Error fetching ranking details:", error),
+        );
+    } else {
+      setName("");
+      setStartDate("");
+      setEndDate("");
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("jwtToken");
+
+    const updatedRanking = {
+      name,
+      startDate,
+      endDate,
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const token = localStorage.getItem('jwtToken');
+    axios
+      .put(
+        `http://localhost:8080/api/rankings/${selectedRankingId}/edit`,
+        updatedRanking,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      )
+      .then(() => {
+        alert("Ranking updated successfully!");
+        setMessage("Ranking został zaktualizowany.");
+        if (onClose) onClose();
+      })
+      .catch((error) => {
+        console.error("Error updating ranking:", error);
+        setMessage("Błąd podczas aktualizacji rankingu.");
+      });
+  };
 
-        const updatedRanking = {
-            name,
-            startDate,
-            endDate,
-        };
-
-        axios
-            .put(`http://localhost:8080/api/rankings/${selectedRankingId}/edit`, updatedRanking, {
-                headers: { Authorization: `Bearer ${token}` },
-            })
-            .then(() => {
-                alert('Ranking updated successfully!');
-                setMessage('Ranking został zaktualizowany.');
-                if (onClose) onClose();
-            })
-            .catch((error) => {
-                console.error('Error updating ranking:', error);
-                setMessage('Błąd podczas aktualizacji rankingu.');
-            });
-    };
-
-    return (
-        <Container className="mt-4">
-            <h2>Edytuj Ranking</h2>
-            <Form>
-                <Form.Group>
-                    <Form.Label>Wybierz Ranking</Form.Label>
-                    <Form.Select value={selectedRankingId} onChange={handleRankingChange}>
-                        <option value="">-- Wybierz Ranking --</option>
-                        {rankings.map((ranking) => (
-                            <option key={ranking.id} value={ranking.id}>
-                                {ranking.name}
-                            </option>
-                        ))}
-                    </Form.Select>
-                </Form.Group>
-            </Form>
-            {selectedRankingId && (
-                <Form onSubmit={handleSubmit} className="mt-3">
-                    <Form.Group>
-                        <Form.Label>Nazwa</Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required
-                        />
-                    </Form.Group>
-                    <Form.Group className="mt-2">
-                        <Form.Label>Data rozpoczęcia</Form.Label>
-                        <Form.Control
-                            type="date"
-                            value={startDate}
-                            onChange={(e) => setStartDate(e.target.value)}
-                            required
-                        />
-                    </Form.Group>
-                    <Form.Group className="mt-2">
-                        <Form.Label>Data zakończenia</Form.Label>
-                        <Form.Control
-                            type="date"
-                            value={endDate}
-                            onChange={(e) => setEndDate(e.target.value)}
-                            required
-                        />
-                    </Form.Group>
-                    <Button type="submit" className="btn btn-primary mt-3">
-                        Zapisz zmiany
-                    </Button>
-                    <Button
-                        type="button"
-                        className="btn btn-secondary mt-3 ms-2"
-                        onClick={onClose}
-                    >
-                        Anuluj
-                    </Button>
-                </Form>
-            )}
-            {message && <div className="alert alert-info mt-3">{message}</div>}
-        </Container>
-    );
+  return (
+    <Container className="mt-4">
+      <h2>Edytuj Ranking</h2>
+      <Form>
+        <Form.Group>
+          <Form.Label>Wybierz Ranking</Form.Label>
+          <Form.Select value={selectedRankingId} onChange={handleRankingChange}>
+            <option value="">-- Wybierz Ranking --</option>
+            {rankings.map((ranking) => (
+              <option key={ranking.id} value={ranking.id}>
+                {ranking.name}
+              </option>
+            ))}
+          </Form.Select>
+        </Form.Group>
+      </Form>
+      {selectedRankingId && (
+        <Form onSubmit={handleSubmit} className="mt-3">
+          <Form.Group>
+            <Form.Label>Nazwa</Form.Label>
+            <Form.Control
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mt-2">
+            <Form.Label>Data rozpoczęcia</Form.Label>
+            <Form.Control
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mt-2">
+            <Form.Label>Data zakończenia</Form.Label>
+            <Form.Control
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Button type="submit" className="btn btn-primary mt-3">
+            Zapisz zmiany
+          </Button>
+          <Button
+            type="button"
+            className="btn btn-secondary mt-3 ms-2"
+            onClick={onClose}
+          >
+            Anuluj
+          </Button>
+        </Form>
+      )}
+      {message && <div className="alert alert-info mt-3">{message}</div>}
+    </Container>
+  );
 };
 
 export default EditRankingForm;
-
-
-

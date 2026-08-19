@@ -11,9 +11,13 @@ import java.util.List;
 @Repository
 public interface BetRepository extends JpaRepository<Bet, Long> {
     List<Bet> findByUserId(Long userId);
+
     List<Bet> findByMatchId(Long matchId);
+
     boolean existsByUserAndMatch(User user, Match match);
+
     int countByUserIdAndIsCorrectTrue(Long userId);
+
     boolean existsByUserIdAndMatchId(Long userId, Long matchId);
 
 }

@@ -14,7 +14,8 @@ public class RefereeRequest {
         this.countryName = countryName;
     }
 
-    public RefereeRequest() {}
+    public RefereeRequest() {
+    }
 
     public String getFirstName() {
         return firstName;

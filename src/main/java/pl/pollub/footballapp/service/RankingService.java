@@ -17,13 +17,11 @@ import java.util.List;
 @Service
 public class RankingService {
     private final RankingRepository rankingRepository;
+
     @Autowired
     public RankingService(RankingRepository rankingRepository) {
         this.rankingRepository = rankingRepository;
     }
-
-
-
 
 
     public List<Ranking> getAllRankings() {

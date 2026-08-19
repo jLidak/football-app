@@ -12,6 +12,7 @@ import java.util.Map;
 @RequestMapping("/api/favorite-matches")
 public class FavoriteMatchController {
     private FavoriteMatchService favoriteMatchService;
+
     @Autowired
     public FavoriteMatchController(FavoriteMatchService favoriteMatchService) {
         this.favoriteMatchService = favoriteMatchService;

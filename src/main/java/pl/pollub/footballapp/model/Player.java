@@ -1,11 +1,12 @@
 package pl.pollub.footballapp.model;
 
 import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-public class    Player {
+public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

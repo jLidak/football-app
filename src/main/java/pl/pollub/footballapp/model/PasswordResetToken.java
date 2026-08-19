@@ -21,7 +21,8 @@ public class PasswordResetToken {
 
     // Konstruktor, gettery i settery
 
-    public PasswordResetToken() {}
+    public PasswordResetToken() {
+    }
 
     public PasswordResetToken(String token, User user, LocalDateTime expiryDate) {
         this.token = token;

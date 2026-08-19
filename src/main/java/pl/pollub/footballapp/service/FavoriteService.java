@@ -19,16 +19,13 @@ public class FavoriteService {
     private FavoriteTeamRepository favoriteTeamRepository;
     private FavoriteLeagueRepository favoriteLeagueRepository;
     private FavoriteMatchRepository favoriteMatchRepository;
+
     @Autowired
     public FavoriteService(FavoriteTeamRepository favoriteTeamRepository, FavoriteLeagueRepository favoriteLeagueRepository, FavoriteMatchRepository favoriteMatchRepository) {
         this.favoriteTeamRepository = favoriteTeamRepository;
         this.favoriteLeagueRepository = favoriteLeagueRepository;
         this.favoriteMatchRepository = favoriteMatchRepository;
     }
-
-
-
-
 
 
 //    public List<FavoriteTeam> getFavoriteTeamsByUserId(Long userId) {

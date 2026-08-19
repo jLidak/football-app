@@ -9,6 +9,7 @@ import pl.pollub.footballapp.model.User;
 import pl.pollub.footballapp.repository.FavoriteTeamRepository;
 import pl.pollub.footballapp.repository.TeamRepository;
 import pl.pollub.footballapp.repository.UserRepository;
+
 import java.util.Optional;
 
 @Service
@@ -16,15 +17,13 @@ public class FavoriteTeamService {
     private FavoriteTeamRepository favoriteTeamRepository;
     private UserRepository userRepository;
     private TeamRepository teamRepository;
+
     @Autowired
     public FavoriteTeamService(FavoriteTeamRepository favoriteTeamRepository, UserRepository userRepository, TeamRepository teamRepository) {
         this.favoriteTeamRepository = favoriteTeamRepository;
         this.userRepository = userRepository;
         this.teamRepository = teamRepository;
     }
-
-
-
 
 
     @Transactional

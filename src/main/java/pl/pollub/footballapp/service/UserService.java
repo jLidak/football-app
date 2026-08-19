@@ -165,7 +165,6 @@ public class UserService implements UserDetailsService {
     }
 
 
-
     public void registerUser(User user) {
         if (userRepository.existsByEmail(user.getEmail())) {
             throw new IllegalArgumentException("Email already in use");
@@ -228,7 +227,7 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
     }
 
-//    public Optional<Map<String, Object>> getUserIdByEmail(String email) {
+    //    public Optional<Map<String, Object>> getUserIdByEmail(String email) {
 //        Optional<User> user = userRepository.findByUsername(email);
 //        return user.map(u -> {
 //            Map<String, Object> response = new HashMap<>();
@@ -279,7 +278,6 @@ public class UserService implements UserDetailsService {
         user.setResettingPassword(false);
         userRepository.save(user);
     }
-
 
 
 }

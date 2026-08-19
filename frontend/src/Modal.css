@@ -1,25 +1,25 @@
 /* Ensure the modal dialog is centered both horizontally and vertically */
 .modal-dialog-centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 1rem); /* Vertically center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 1rem); /* Vertically center */
 }
 
 /* Restrict the modal width and ensure it's responsive */
 .modal-dialog {
-    max-width: 400px; /* Adjust to your desired width */
-    margin: auto;
+  max-width: 400px; /* Adjust to your desired width */
+  margin: auto;
 }
 
 /* Ensure the modal background is full-screen */
 .modal.fade .modal-dialog {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Optional styling to prevent overflow issues */
 .modal-content {
-    overflow: hidden;
-    border-radius: 10px;
+  overflow: hidden;
+  border-radius: 10px;
 }

@@ -22,8 +22,6 @@ public class RankingController {
     }
 
 
-
-
     @GetMapping
     public ResponseEntity<List<Ranking>> getAllRankings() {
         List<Ranking> rankings = rankingService.getAllRankings();

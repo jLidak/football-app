@@ -69,7 +69,6 @@ public class TeamGroupMembershipService {
     }
 
 
-
     public Map<Team, Integer> calculateGroupPoints(Long groupId) {
         LeagueGroup group = leagueGroupRepository.findById(groupId)
                 .orElseThrow(() -> new RuntimeException("Group not found"));

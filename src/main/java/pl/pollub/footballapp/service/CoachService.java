@@ -26,15 +26,13 @@ public class CoachService {
     private CoachRepository coachRepository;
     private CountryRepository countryRepository;
     private ImporterFactory importerFactory;
+
     @Autowired
     public CoachService(CoachRepository coachRepository, CountryRepository countryRepository, ImporterFactory importerFactory) {
         this.coachRepository = coachRepository;
         this.countryRepository = countryRepository;
         this.importerFactory = importerFactory;
     }
-
-
-
 
 
     public ResponseEntity<?> addCoach(Coach coachRequest) {
@@ -45,13 +43,13 @@ public class CoachService {
         }
 
         boolean duplicateExists;
-        if(coachRequest.getDateOfBirth() == "null"){
+        if (coachRequest.getDateOfBirth() == "null") {
             duplicateExists = coachRepository.existsByFirstNameAndLastNameAndCountry(
                     coachRequest.getFirstName(),
                     coachRequest.getLastName(),
                     country.get()
             );
-        }else{
+        } else {
             duplicateExists = coachRepository.existsByFirstNameAndLastNameAndDateOfBirthAndCountry(
                     coachRequest.getFirstName(),
                     coachRequest.getLastName(),
@@ -71,7 +69,7 @@ public class CoachService {
         coach.setFirstName(coachRequest.getFirstName());
         coach.setLastName(coachRequest.getLastName());
         // Parse date of birth only if it is provided
-        if(!(coachRequest.getDateOfBirth() == "null")){
+        if (!(coachRequest.getDateOfBirth() == "null")) {
             coach.setDateOfBirth(LocalDate.parse(coachRequest.getDateOfBirth()));
         }
         coach.setNickname(coachRequest.getNickname());

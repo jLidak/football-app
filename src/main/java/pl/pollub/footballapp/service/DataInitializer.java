@@ -19,13 +19,12 @@ public class DataInitializer {
 
     @Autowired
     private CountryRepository countryRepository;
+
     @Autowired
     public DataInitializer(CountryRepository countryRepository, PositionRepository positionRepository) {
         this.countryRepository = countryRepository;
         this.positionRepository = positionRepository;
     }
-
-
 
 
     @Autowired
@@ -280,6 +279,7 @@ public class DataInitializer {
             positionRepository.saveAll(positions);
         }
     }
+
     @PostConstruct
     public void initializeLeagueStages() {
         if (leagueStageRepository.count() == 0) {
@@ -315,8 +315,6 @@ public class DataInitializer {
             System.out.println("Katalog nie istnieje lub nie jest folderem.");
         }
     }
-
-
 
 
 }

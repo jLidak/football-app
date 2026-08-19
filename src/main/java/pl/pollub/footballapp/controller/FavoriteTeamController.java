@@ -11,6 +11,7 @@ import java.util.Map;
 @RequestMapping("/api/favorite-teams")
 public class FavoriteTeamController {
     private FavoriteTeamService favoriteTeamService;
+
     @Autowired
     public FavoriteTeamController(FavoriteTeamService favoriteTeamService) {
         this.favoriteTeamService = favoriteTeamService;

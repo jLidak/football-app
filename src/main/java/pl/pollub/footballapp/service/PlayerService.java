@@ -40,8 +40,6 @@ public class PlayerService {
     }
 
 
-
-
     public void updatePlayer(Long id, PlayerRequest playerRequest) {
         Player existingPlayer = playerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Player not found"));
@@ -168,7 +166,6 @@ public class PlayerService {
     }
 
 
-
     public void addPlayerWithPicture(String firstName, String lastName, String dateOfBirth, String nickname,
                                      Long positionId, Long countryId, BigDecimal value, MultipartFile picture) {
         PlayerRequest request = new PlayerRequest(firstName, lastName, dateOfBirth, nickname, positionId, countryId, value);
@@ -199,8 +196,6 @@ public class PlayerService {
         }
         updatePlayer(id, request);
     }
-
-
 
 
     public String importPlayers(MultipartFile file, String fileType, ImporterFactory importerFactory) {

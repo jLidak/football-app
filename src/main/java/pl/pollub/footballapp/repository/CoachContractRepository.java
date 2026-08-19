@@ -13,7 +13,9 @@ public interface CoachContractRepository extends JpaRepository<CoachContract, Lo
     Optional<CoachContract> findByCoachIdAndEndDateIsNull(Long coachId);
 
     List<CoachContract> findByCoachId(Long coachId);
+
     List<CoachContract> findByTeamId(Long teamId);
+
     @Query("SELECT c FROM CoachContract c WHERE c.team.id = :teamId AND c.isActive = true")
     Optional<CoachContract> findByTeamIdAndIsActive(Long teamId);
 

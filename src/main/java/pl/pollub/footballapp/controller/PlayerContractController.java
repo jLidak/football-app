@@ -16,11 +16,11 @@ import java.util.List;
 @RequestMapping("/api/player-contracts")
 public class PlayerContractController {
     private PlayerContractService playerContractService;
+
     @Autowired
     public PlayerContractController(PlayerContractService playerContractService) {
         this.playerContractService = playerContractService;
     }
-
 
 
     @PostMapping("/add")

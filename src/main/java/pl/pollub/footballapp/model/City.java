@@ -14,7 +14,8 @@ public class City {
     @JoinColumn(name = "country_id", nullable = false)
     private Country country;
 
-    public City() {}
+    public City() {
+    }
 
     public City(String name, Country country) {
         this.name = name;

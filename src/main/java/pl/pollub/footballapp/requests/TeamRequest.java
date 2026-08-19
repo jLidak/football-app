@@ -25,6 +25,7 @@ public class TeamRequest {
         this.isClub = isClub;
         this.leagueId = leagueId;
     }
+
     public TeamRequest() {
     }
 
